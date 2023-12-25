@@ -4,7 +4,6 @@
 
 Dette projekt viser en liste over danske helligdage.
 
-
 ## Live Demo
 
 Se applikationen live her: [My Holiday App](https://joachimth.github.io/myHolidayApp)
