@@ -2,7 +2,7 @@
   "name": "my-holiday-app",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://joachimth.github.io/myHolidayApp",
+  "homepage": "https://joachimth.github.io/MyHolidayApp",
   "dependencies": {
     "axios": "latest",
     "react": "latest",

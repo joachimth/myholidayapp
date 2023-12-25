@@ -1,12 +1,12 @@
 # My Holiday App
 
-[![Build Status](https://github.com/joachimth/myHolidayApp/workflows/Build%20and%20Deploy/badge.svg)](https://github.com/joachimth/myHolidayApp/actions)
+[![Build Status](https://github.com/joachimth/MyHolidayApp/workflows/Build%20and%20Deploy/badge.svg)](https://github.com/joachimth/MyHolidayApp/actions)
 
 Dette projekt viser en liste over danske helligdage.
 
 ## Live Demo
 
-Se applikationen live her: [My Holiday App](https://joachimth.github.io/myHolidayApp)
+Se applikationen live her: [My Holiday App](https://joachimth.github.io/MyHolidayApp)
 
 
 ## Installation
