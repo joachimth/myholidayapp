@@ -14,7 +14,6 @@ jobs:
     - run: npm run test
 
     # Tilføj disse to nye trin for at sætte Git brugeridentitet
-    - name: Set Git User
     - run: |
         git config --global user.email "joachim@thirsbro.dk"
         git config --global user.name "GitHub Actions"
