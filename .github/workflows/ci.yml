@@ -15,10 +15,12 @@ jobs:
 
     # Tilføj disse to nye trin for at sætte Git brugeridentitet
     - name: Set Git User
-      run: |
+    - run: |
+        git config --global user.email "joachim@thirsbro.dk"
         git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
+    # Tilføj dette trin før `npm run deploy` trinnet i dit workflow.
     - run: npm run deploy
       env:
         CI: true
