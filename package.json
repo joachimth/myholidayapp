@@ -7,7 +7,8 @@
     "axios": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "web-vitals": "latest"
+    "web-vitals": "latest",
+    "@heroicons/react": "latest"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "latest",
