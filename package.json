@@ -8,6 +8,7 @@
     "react": "latest",
     "react-dom": "latest",
     "web-vitals": "latest",
+    "@headlessui/react": "latest",
     "@heroicons/react": "latest"
   },
   "devDependencies": {
