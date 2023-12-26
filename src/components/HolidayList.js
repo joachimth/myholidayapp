@@ -1,8 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
-
+import { ChevronDownIcon } from '@heroicons/react/solid';
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
