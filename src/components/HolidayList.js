@@ -1,7 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/solid';
+// import { ChevronDownIcon } from '@heroicons/react/solid';
+// import { ChevronDownIcon } from '@heroicons/react/24/outline'; // for outline stil
+import { ChevronDownIcon } from '@heroicons/react/24/solid'; // for solid stil
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
