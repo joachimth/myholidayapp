@@ -31,6 +31,17 @@ const HolidayList = () => {
             <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
           </Menu.Button>
         </div>
+        
+        <div className="dropdown dropdown-right">
+  <div tabIndex={0} role="button" className="btn m-1">Click</div>
+  <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+  <button onClick={() => setYear(yr)</button>
+    <li><a>currentYear</a></li>
+    <li><a>currentYear+1</a></li>
+    <li><a>currentYear+2</a></li>
+  </ul>
+</div>
+        
 
         <Transition
           as={Fragment}
