@@ -35,9 +35,9 @@ const HolidayList = () => {
         <div className="dropdown dropdown-right">
         <div tabIndex={0} role="button" className="btn m-1">currentYear</div>
         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"> 
-          <li><button onClick={setYear(yr)}>currentYear</button></li>
-          <li><button onClick={setYear(yr+1)}>currentYear+1</button></li>
-          <li><button onClick={setYear(yr+1)}>currentYear+2</button></li>
+          <li><button onClick={setYear(currentYear)}>currentYear</button></li>
+          <li><button onClick={setYear(currentYear+1)}>currentYear+1</button></li>
+          <li><button onClick={setYear(currentYear+2)}>currentYear+2</button></li>
         </ul>
         </div>
         
