@@ -24,21 +24,19 @@ const HolidayList = () => {
 
   return (
     <div className="container mx-auto p-4">
+    
+    
+      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" onClick={setYear(currentYear)}>currentYear</button>
+      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" onClick={setYear(currentYear+1)}>currentYear+1</button>
+    
+    
+    
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button className="btn">
             {year}
             <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
           </Menu.Button>
-        </div>
-        
-        <div className="dropdown dropdown-right">
-        <div tabIndex={0} role="button" className="btn m-1">currentYear</div>
-        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"> 
-          <li><button onClick={setYear(currentYear)}>currentYear</button></li>
-          <li><button onClick={setYear(currentYear+1)}>currentYear+1</button></li>
-          <li><button onClick={setYear(currentYear+2)}>currentYear+2</button></li>
-        </ul>
         </div>
         
         <Transition
