@@ -1,7 +1,14 @@
 {
   "name": "my-holiday-app",
-  "version": "1.0.1",
-  "private": true,
+  "version": "1.0.2",
+  "description": "Simple DK Holiday calendar",
+  "author": "Joachim Thirsbro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joachimth/MyHolidayApp.git"
+  },
+  "private": false,
   "homepage": "https://joachimth.github.io/MyHolidayApp",
   "dependencies": {
     "axios": "latest",
