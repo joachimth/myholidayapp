@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/MyHolidayApp/static/css/main.35554bcc.css",
-    "main.js": "/MyHolidayApp/static/js/main.bcde1054.js",
+    "main.css": "/MyHolidayApp/static/css/main.8f20ca9d.css",
+    "main.js": "/MyHolidayApp/static/js/main.2e77bc27.js",
     "static/js/496.9822a038.chunk.js": "/MyHolidayApp/static/js/496.9822a038.chunk.js",
     "index.html": "/MyHolidayApp/index.html",
-    "main.35554bcc.css.map": "/MyHolidayApp/static/css/main.35554bcc.css.map",
-    "main.bcde1054.js.map": "/MyHolidayApp/static/js/main.bcde1054.js.map",
+    "main.8f20ca9d.css.map": "/MyHolidayApp/static/css/main.8f20ca9d.css.map",
+    "main.2e77bc27.js.map": "/MyHolidayApp/static/js/main.2e77bc27.js.map",
     "496.9822a038.chunk.js.map": "/MyHolidayApp/static/js/496.9822a038.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.35554bcc.css",
-    "static/js/main.bcde1054.js"
+    "static/css/main.8f20ca9d.css",
+    "static/js/main.2e77bc27.js"
   ]
 }
