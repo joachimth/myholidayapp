@@ -3,14 +3,3 @@
 @tailwind utilities;
 
 @import 'daisyui';
-
-
-@layer base {
-  html {
-    @apply text-neutral-800;
-  }
-  html.dark {
-    @apply text-neutral-50;
-    @apply bg-neutral-800;
-  }
-}
