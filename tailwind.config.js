@@ -1,13 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-content: [
+  content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/tw-elements-react/dist/js/**/*.js"
-],
-theme: {
+  ],
+  theme: {
     extend: {},
-},
-darkMode: "class",
-plugins: [require("tw-elements-react/dist/plugin.cjs")]
+  },
+  darkMode: "class", // or 'media' or false
+  plugins: [
+    require('daisyui'),
+    require("tw-elements-react/dist/plugin.cjs") // only if you're using tw-elements-react
+  ],
+  daisyui: {
+    themes: ["acid"],
+  },
 }
