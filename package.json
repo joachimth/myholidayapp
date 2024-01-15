@@ -23,7 +23,6 @@
     "react": "latest",
     "react-dom": "latest",
     "web-vitals": "latest",
-    "@tailwindcss/typography",
     "tw-elements-react": "latest",
     "@headlessui/react": "latest",
     "@heroicons/react": "latest"
