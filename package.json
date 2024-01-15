@@ -11,6 +11,9 @@
   "private": false,
   "homepage": "https://joachimth.github.io/MyHolidayApp",
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "latest",
+    "@tailwindcss/forms": "latest",
+    "@tailwindcss/typography": "latest",
     "axios": "latest",
     "autoprefixer": "latest",
     "daisyui": "latest",
