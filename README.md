@@ -2,12 +2,15 @@
 
 [![Build Status](https://github.com/joachimth/MyHolidayApp/workflows/Build%20and%20Deploy/badge.svg)](https://github.com/joachimth/MyHolidayApp/actions)
 
+
+
+Dette projekt viser en liste over danske helligdage.
+
+
 ## Docker
 
 [Dockerhub](https://hub.docker.com/r/joachimth/myholidayapp)
 
-
-Dette projekt viser en liste over danske helligdage.
 
 ## Live Demo
 
