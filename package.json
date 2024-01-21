@@ -1,6 +1,6 @@
 {
   "name": "my-holiday-app",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Simple DK Holiday calendar",
   "author": "Joachim Thirsbro",
   "license": "MIT",
@@ -41,6 +41,8 @@
     "svgo": "latest"
   },
   "scripts": {
+    "docker-build": "docker build -t myholidayapp .",
+    "docker-run": "docker run --rm -p 3000:3000 -v $(pwd):/app myholidayapp",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
