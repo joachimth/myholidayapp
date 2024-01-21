@@ -1,12 +1,12 @@
 FROM node:alpine
 
 ENV NODE_ENV production
-LABEL org.opencontainers.image.title "HolidayApp"
-LABEL org.opencontainers.image.description "A self-hosted service landing page, with docker and service integrations."
-LABEL org.opencontainers.image.url="https://github.com/gethomepage/homepage"
-LABEL org.opencontainers.image.documentation='https://github.com/gethomepage/homepage/wiki'
-LABEL org.opencontainers.image.source='https://github.com/gethomepage/homepage'
-LABEL org.opencontainers.image.licenses='Apache-2.0'
+LABEL org.opencontainers.image.title "myHolidayApp"
+LABEL org.opencontainers.image.description "A self-hosted service page, with docker and service integrations."
+LABEL org.opencontainers.image.url="https://joachimth.github.io/MyHolidayApp"
+LABEL org.opencontainers.image.documentation='https://joachimth.github.io/MyHolidayApp'
+LABEL org.opencontainers.image.source='https://joachimth.github.io/MyHolidayApp'
+LABEL org.opencontainers.image.licenses='MIT'
 
 
 WORKDIR /usr/src/app
