@@ -11,12 +11,20 @@ LABEL org.opencontainers.image.licenses='MIT'
 
 WORKDIR /app
 
-COPY . .
 
+
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# install app dependencies
+COPY package.json ./
 RUN npm install
 
-ENV PORT 5000
-EXPOSE 5000
+# add app
+COPY . ./
+
+ENV PORT 3000
+EXPOSE 3000
 
 CMD ["npm", "start"]
     
