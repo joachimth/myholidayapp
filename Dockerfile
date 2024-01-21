@@ -11,20 +11,14 @@ LABEL org.opencontainers.image.licenses='MIT'
 
 WORKDIR /app
 
-COPY . /app
+COPY . .
 
-RUN npm uninstall react-scripts
-
-RUN npm install -D react-scripts
-
+RUN npm react-scripts -g --silent
 
 RUN npm install
-
-
-RUN npm run build
 
 ENV PORT 5000
 EXPOSE 5000
 
-RUN npm install serve -g
-CMD ["serve", "-s", "dist/"]
+CMD ["npm", "start"]
+    
