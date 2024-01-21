@@ -13,8 +13,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm react-scripts -g --silent
-
 RUN npm install
 
 ENV PORT 5000
