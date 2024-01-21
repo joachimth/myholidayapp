@@ -41,8 +41,8 @@
     "svgo": "latest"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "$(npm bin)/react-scripts start",
+    "build": "$(npm bin)/react-scripts build",
     "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

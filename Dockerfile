@@ -13,12 +13,9 @@ WORKDIR /app
 
 COPY ./package*.json /app/
 
-RUN npm ci
-
-COPY . /app
-
 RUN npm install
 
+COPY . /app
 RUN npm run build
 
 ENV PORT 5000
