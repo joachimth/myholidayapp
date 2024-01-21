@@ -9,16 +9,20 @@ LABEL org.opencontainers.image.source='https://joachimth.github.io/MyHolidayApp'
 LABEL org.opencontainers.image.licenses='MIT'
 
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY . .
+COPY ./package*.json /app/
 
-RUN npm install -qy
+RUN npm ci
+
+COPY . /app
+
+RUN npm install
 
 RUN npm run build
 
 ENV PORT 5000
 EXPOSE 5000
 
-ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["npm", "start"]
+RUN npm install serve -g
+CMD ["serve", "-s", "dist/"]
