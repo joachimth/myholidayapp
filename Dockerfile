@@ -17,8 +17,8 @@ RUN npm install -qy
 
 RUN npm run build
 
-ENV PORT 3232
-EXPOSE 3232
+ENV PORT 5000
+EXPOSE 5000
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["npm", "start"]
