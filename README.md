@@ -1,6 +1,6 @@
 # My Holiday App
 
-[![Build Status](https://github.com/joachimth/MyHolidayApp/workflows/Build%20and%20Deploy/badge.svg)](https://github.com/joachimth/MyHolidayApp/actions)
+[![Build Status](https://github.com/joachimth/myholidayapp/workflows/Build%20and%20Deploy/badge.svg)](https://github.com/joachimth/myholidayapp/actions)
 
 
 

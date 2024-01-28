@@ -6,10 +6,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joachimth/MyHolidayApp.git"
+    "url": "git+https://github.com/joachimth/myholidayapp.git"
   },
   "private": false,
-  "homepage": "https://joachimth.github.io/MyHolidayApp",
+  "homepage": "https://joachimth.github.io/myholidayapp",
   "dependencies": {
     "@tailwindcss/aspect-ratio": "latest",
     "@tailwindcss/forms": "latest",
