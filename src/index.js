@@ -8,7 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('holidayinfo')
 );
 
 // Hvis du vil starte måling af ydeevne i din app, kan du passere en funktion
