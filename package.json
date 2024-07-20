@@ -30,7 +30,9 @@
   "devDependencies": {
     "tailwindcss": "^3.0.23",
     "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.6",
+    "postcss": "^8.4.14",
+    "postcss-import": "^14.0.2",
+    "postcss-nested": "^5.0.6",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   },
   "eslintConfig": {
