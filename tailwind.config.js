@@ -3,11 +3,11 @@ module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "node_modules/daisyui/dist/**/*.js"
   ],
   theme: {
     extend: {},
   },
-  darkMode: "class", // or 'media' or false
   plugins: [
     require('daisyui'),
   ],
