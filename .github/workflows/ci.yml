@@ -1,26 +1,36 @@
 name: Build and Deploy
+
 on: [push]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: '21.5.0'
-    - run: npm install
-    - run: npm run build
-    - run: npm run test
 
-    # Tilføj disse to nye trin for at sætte Git brugeridentitet
-    - run: |
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the project
+      run: npm run build
+
+    - name: Run tests
+      run: npm run test
+
+    - name: Configure Git user
+      run: |
         git config --global user.email "joachim@thirsbro.dk"
         git config --global user.name "GitHub Actions"
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
-    # Tilføj dette trin før `npm run deploy` trinnet i dit workflow.
-    - run: npm run deploy
+    - name: Deploy to GitHub Pages
+      run: npm run deploy
       env:
         CI: true
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
