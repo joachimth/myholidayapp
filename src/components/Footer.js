@@ -4,15 +4,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer footer-center p-4 bg-base-300 text-base-content">
-  <aside>
-  <p><a href="https://github.com/joachimth/myholidayapp" className="text-blue-600 hover:underline">myholidayapp</a> by <a href="https://github.com/joachimth" className="text-blue-600 hover:underline">joachimth</a> | {currentYear}</p>
-    <p>Copyright © 2024 - All right reserved</p>
-  </aside>
-</footer>
-    
-    
-    
+    <footer className="bg-neutral text-neutral-content text-center p-4 mt-8">
+      <p className="text-sm">
+        <a href="https://github.com/joachimth/MyHolidayApp" className="link link-hover">myHolidayApp</a> by <a href="https://github.com/joachimth" className="link link-hover">joachimth</a> | {currentYear}
+      </p>
+    </footer>
   );
 };
 
