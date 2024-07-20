@@ -25,12 +25,13 @@
     "web-vitals": "^3.0.2",
     "@heroicons/react": "^2.0.13",
     "@headlessui/react": "^1.4.0",
-    "daisyui": "^2.0.0"
+    "daisyui": "^2.52.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.23",
     "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.6"
+    "postcss": "^8.4.6",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   },
   "eslintConfig": {
     "extends": [
