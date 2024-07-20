@@ -13,4 +13,4 @@ ReactDOM.render(
 
 // Hvis du vil starte måling af ydeevne i din app, kan du passere en funktion
 // til log resultaterne (for eksempel: reportWebVitals(console.log))
-reportWebVitals(console.log);
+reportWebVitals();
