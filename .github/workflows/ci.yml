@@ -17,6 +17,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Log Tailwind CSS and DaisyUI Versions
+      run: |
+        npm list tailwindcss
+        npm list daisyui
+
     - name: Build the project
       run: npm run build
 
