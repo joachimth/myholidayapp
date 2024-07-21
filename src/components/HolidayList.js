@@ -67,29 +67,29 @@ const HolidayList = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <ul className="mt-4 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {holidays.map((holiday) => (
-            <li key={holiday.date} className="px-4 py-4 sm:px-6 border-b border-gray-200">
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-medium text-gray-600 truncate">{holiday.localName}</p>
-                <div className="ml-2 flex-shrink-0 flex">
-                  <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                    {holiday.date}
-                  </p>
-                </div>
-              </div>
-            </li>
+            <div key={holiday.date} className="bg-white rounded-lg shadow-md p-4">
+              <p className="text-sm font-medium text-gray-600">{holiday.localName}</p>
+              <p className="text-xs text-gray-500">{holiday.date}</p>
+            </div>
           ))}
-          {holidays.length === 0 && <li className="px-4 py-4 sm:px-6 text-center">Ingen helligdage fundet for {year}.</li>}
-        </ul>
+          {holidays.length === 0 && <div className="text-center col-span-full">Ingen helligdage fundet for {year}.</div>}
+        </div>
       )}
     </div>
   );
 };
 
 const App = () => (
-  <div>
-    <HolidayList />
+  <div className="min-h-screen flex flex-col bg-base-200 text-base-content">
+    <header className="bg-primary text-primary-content p-4 shadow-md">
+      <h1 className="text-center text-4xl">My Holiday App</h1>
+    </header>
+    <main className="flex-grow">
+      <HolidayList />
+    </main>
+    <Footer />
   </div>
 );
 
