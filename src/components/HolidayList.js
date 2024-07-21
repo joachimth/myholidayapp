@@ -23,11 +23,11 @@ const HolidayList = () => {
   }, [year]);
 
   return (
-
-      <div className="navbar bg-base-100">
-  <a className="btn btn-ghost text-xl">Danske Helligdage i {year}</a>
-</div>
-         <div className="container mx-auto p-4">
+    <div className="navbar bg-base-100">
+      <a className="btn btn-ghost text-xl">Danske Helligdage i {year}</a>
+    </div>
+    
+    <div className="container mx-auto p-4">
       <Menu as="div" className="relative inline-block text-left w-full">
         <div className="w-full">
           <Menu.Button className="inline-flex w-full justify-between rounded-md shadow-sm px-4 py-2 bg-base-100 text-base-content hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 focus:ring-primary">
@@ -66,7 +66,8 @@ const HolidayList = () => {
           </Menu.Items>
         </Transition>
       </Menu>
-      
+
+      <h1 className="text-2xl font-bold text-center text-base-content mt-6 mb-4"></h1>
       {loading ? (
         <p>Loading...</p>
       ) : (
