@@ -89,7 +89,6 @@ const App = () => (
     <main className="flex-grow">
       <HolidayList />
     </main>
-    <Footer />
   </div>
 );
 
