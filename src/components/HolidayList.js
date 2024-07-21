@@ -2,7 +2,6 @@ import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import ThemeSelector from './ThemeSelector';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -24,12 +23,6 @@ const HolidayList = () => {
   }, [year]);
 
   return (
-    <div className="mt-2">
-        <ThemeSelector />
-    </div>
-    
-    
-    
     <div className="container mx-auto p-4">
       <Menu as="div" className="relative inline-block text-left w-full">
         <div className="w-full">
