@@ -6,47 +6,39 @@
 /* Custom styles */
 
 body {
-  @apply bg-base-200;
+  @apply bg-white text-black;
 }
 
-.container {
-  @apply mx-auto p-4;
+.App-header {
+  @apply bg-gray-100 p-4 text-center;
 }
 
-h1 {
-  @apply text-2xl font-bold text-center text-gray-800 mt-6 mb-4;
+.App-header h1 {
+  @apply text-2xl font-bold;
 }
 
-.menu-button {
-  @apply inline-flex w-full justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500;
+.App-main {
+  @apply p-4 text-center;
 }
 
-.menu-items {
-  @apply origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none;
+.App-main h2 {
+  @apply text-xl mb-4;
 }
 
-.menu-item {
-  @apply block px-4 py-2 text-sm w-full text-left;
-}
-
-.menu-item-active {
-  @apply bg-gray-100 text-gray-900;
-}
-
-.menu-item-inactive {
-  @apply text-gray-700;
+.App-button {
+  @apply bg-gray-300 text-black py-2 px-4 rounded hover:bg-gray-400;
 }
 
 .holiday-list {
-  @apply mt-4 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl;
+  @apply mt-4 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden;
 }
 
 .holiday-list-item {
-  @apply px-4 py-4 sm:px-6 border-b border-gray-200;
+  @apply px-4 py-4 border-b border-gray-200;
 }
 
 .holiday-item-title {
-  @apply text-sm font-medium text-gray-600 truncate;
+  @apply text-sm font-medium text-gray-600;
 }
 
 .holiday-item-date {
@@ -54,17 +46,13 @@ h1 {
 }
 
 .holiday-list-empty {
-  @apply px-4 py-4 sm:px-6 text-center;
+  @apply px-4 py-4 text-center;
 }
 
-.footer {
-  @apply bg-gray-100 text-center p-4 mt-8;
+.App-footer {
+  @apply bg-gray-100 p-4 text-center;
 }
 
-.footer-text {
+.App-footer p {
   @apply text-sm text-gray-600;
-}
-
-.footer-link {
-  @apply text-blue-600 hover:underline;
 }
