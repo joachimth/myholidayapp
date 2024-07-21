@@ -11,9 +11,6 @@ document.documentElement.setAttribute('data-theme', 'bumblebee');
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Footer>
-      <ThemeSelector />
-    </Footer>
   </React.StrictMode>,
   document.getElementById('root')
 );
