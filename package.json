@@ -13,9 +13,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "serve -s build"
+    "serve": "serve -s build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -35,7 +37,8 @@
     "postcss-nested": "^6.0.0",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "css-loader": "^6.7.2",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "gh-pages": "^5.0.0"
   },
   "eslintConfig": {
     "extends": [
