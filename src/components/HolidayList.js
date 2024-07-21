@@ -23,25 +23,11 @@ const HolidayList = () => {
   }, [year]);
 
   return (
-     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold text-center text-base-content mt-6 mb-4">Danske Helligdage i {year}</h1>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {holidays.map((holiday) => (
-            <div key={holiday.date} className="bg-base-100 rounded-lg shadow-md p-4">
-              <p className="text-sm font-medium text-base-content">{holiday.localName}</p>
-              <p className="text-xs text-base-content">{holiday.date}</p>
-            </div>
-          ))}
-          {holidays.length === 0 && <div className="text-center col-span-full">Ingen helligdage fundet for {year}.</div>}
-        </div>
-      )}
-    
-    
-    
 
+      <div className="navbar bg-base-100">
+  <a className="btn btn-ghost text-xl">Danske Helligdage i {year}</a>
+</div>
+         <div className="container mx-auto p-4">
       <Menu as="div" className="relative inline-block text-left w-full">
         <div className="w-full">
           <Menu.Button className="inline-flex w-full justify-between rounded-md shadow-sm px-4 py-2 bg-base-100 text-base-content hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 focus:ring-primary">
@@ -81,6 +67,19 @@ const HolidayList = () => {
         </Transition>
       </Menu>
       
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {holidays.map((holiday) => (
+            <div key={holiday.date} className="bg-base-100 rounded-lg shadow-md p-4">
+              <p className="text-sm font-medium text-base-content">{holiday.localName}</p>
+              <p className="text-xs text-base-content">{holiday.date}</p>
+            </div>
+          ))}
+          {holidays.length === 0 && <div className="text-center col-span-full">Ingen helligdage fundet for {year}.</div>}
+        </div>
+      )}
     </div>
   );
 };
