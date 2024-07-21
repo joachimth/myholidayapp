@@ -2,8 +2,6 @@ import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-// import Footer from './components/Footer'; // Sørg for at filstien er korrekt
-// import './App.css'; // Tilpasset stilark hvis nødvendigt
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -92,7 +90,6 @@ const HolidayList = () => {
 const App = () => (
   <div>
     <HolidayList />
-    //<Footer />
   </div>
 );
 
