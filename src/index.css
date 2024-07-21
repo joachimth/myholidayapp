@@ -2,4 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'daisyui';
+body {
+  @apply bg-base-200;
+}
