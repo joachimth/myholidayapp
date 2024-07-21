@@ -1,11 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import ReactDOM from 'react-dom';
 import './index.css';
+import App from './App';
+import ThemeSelector from './components/ThemeSelector';
+import Footer from './components/Footer';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+// Set default theme to bumblebee
+document.documentElement.setAttribute('data-theme', 'bumblebee');
+
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+    <Footer>
+      <ThemeSelector />
+    </Footer>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
