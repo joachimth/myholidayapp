@@ -1,19 +1,17 @@
 import React from 'react';
-import './App.css';
+import HolidayList from './components/HolidayList';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>My Holiday App</h1>
+    <div className="min-h-screen flex flex-col bg-base-200 text-base-content">
+      <header className="bg-primary text-primary-content p-4 shadow-md">
+        <h1 className="text-center text-4xl">My Holiday App</h1>
       </header>
-      <main className="App-main">
-        <h2>Welcome!</h2>
-        <button className="App-button">Click Me</button>
+      <main className="flex-grow">
+        <HolidayList />
       </main>
-      <footer className="App-footer">
-        <p>Footer Information</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
