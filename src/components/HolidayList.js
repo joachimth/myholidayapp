@@ -2,6 +2,8 @@ import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import Footer from './components/Footer'; // Sørg for at filstien er korrekt
+import './App.css'; // Tilpasset stilark hvis nødvendigt
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -26,7 +28,7 @@ const HolidayList = () => {
     <div className="container mx-auto p-4">
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="btn">
+          <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
             {year}
             <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
           </Menu.Button>
@@ -63,24 +65,35 @@ const HolidayList = () => {
         </Transition>
       </Menu>
 
-      <h1 className="text-3xl font-bold text-center my-6">Danske Helligdage i {year}</h1>
+      <h1 className="text-2xl font-bold text-center text-gray-800 mt-6 mb-4">Danske Helligdage i {year}</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <ul className="mt-4">
+        <ul className="mt-4 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
           {holidays.map((holiday) => (
-            <li key={holiday.date} className="card bordered">
-              <div className="card-body">
-                <h2 className="card-title">{holiday.localName}</h2>
-                <p>{holiday.date}</p>
+            <li key={holiday.date} className="px-4 py-4 sm:px-6 border-b border-gray-200">
+              <div className="flex items-center justify-between">
+                <p className="text-sm font-medium text-gray-600 truncate">{holiday.localName}</p>
+                <div className="ml-2 flex-shrink-0 flex">
+                  <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                    {holiday.date}
+                  </p>
+                </div>
               </div>
             </li>
           ))}
-          {holidays.length === 0 && <li className="px-4 py-4 text-center">Ingen helligdage fundet for {year}.</li>}
+          {holidays.length === 0 && <li className="px-4 py-4 sm:px-6 text-center">Ingen helligdage fundet for {year}.</li>}
         </ul>
       )}
     </div>
   );
 };
 
-export default HolidayList;
+const App = () => (
+  <div>
+    <HolidayList />
+    <Footer />
+  </div>
+);
+
+export default App;
