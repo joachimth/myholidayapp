@@ -9,6 +9,8 @@ function App() {
       <header className="bg-primary text-primary-content p-4 shadow-md">
         <div className="flex justify-between items-center">
           <h1 className="text-center text-4xl">My Holiday App</h1>
+        </div>
+        <div className="flex justify-between items-center">
           <ThemeSelector />
         </div>
       </header>
