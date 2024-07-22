@@ -23,6 +23,7 @@ const HolidayList = () => {
   }, [year]);
 
   return (
+    <>
       <div className="navbar bg-base-100">
         <a className="btn btn-ghost text-xl">Danske Helligdage i {year}</a>
       </div>
@@ -35,8 +36,7 @@ const HolidayList = () => {
               <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
             </Menu.Button>
           </div>
-      </div>
-      <>
+
           <Transition
             as={Fragment}
             enter="transition ease-out duration-100"
@@ -68,7 +68,7 @@ const HolidayList = () => {
           </Transition>
         </Menu>
 
-        <h1 className="text-2xl font-bold text-center text-base-content mt-6 mb-4"></h1>
+        <h1 className="text-2xl font-bold text-center text-base-content mt-6 mb-4">Danske Helligdage i {year}</h1>
         {loading ? (
           <p>Loading...</p>
         ) : (
@@ -82,6 +82,7 @@ const HolidayList = () => {
             {holidays.length === 0 && <div className="text-center col-span-full">Ingen helligdage fundet for {year}.</div>}
           </div>
         )}
+      </div>
     </>
   );
 };
