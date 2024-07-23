@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import HolidayInfo from './HolidayInfo';
+import HolidayInfo from '../services/HolidayInfo'; // Korrekt sti til import
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -24,22 +24,14 @@ const HolidayList = () => {
       .catch(error => console.error('Error:', error));
   }, [year]);
 
-  const openHolidayInfo = (holiday) => {
-    setSelectedHoliday(holiday);
-  };
-
-  const closeHolidayInfo = () => {
-    setSelectedHoliday(null);
-  };
-
   return (
     <>
       <div className="navbar bg-primary text-primary-content">
-        <a className="btn btn-ghost normal-case text-xl">Danske Helligdage i {year}</a>
+        <a href="#" className="btn btn-ghost normal-case text-xl">Danske Helligdage i {year}</a>
       </div>
 
       <div className="container mx-auto p-4">
-        <Menu as="div" className="relative inline-block text-left w-full">
+        <Menu as="div" className="relative inline-block text-left w-full mb-4">
           <div className="w-full">
             <Menu.Button className="inline-flex w-full justify-between rounded-md shadow-sm px-4 py-2 bg-primary text-primary-content hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 focus:ring-primary">
               {year}
@@ -82,10 +74,10 @@ const HolidayList = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {holidays.map((holiday) => (
-              <div
-                key={holiday.date}
+              <div 
+                key={holiday.date} 
                 className="bg-primary text-primary-content rounded-lg shadow-md p-4 cursor-pointer"
-                onClick={() => openHolidayInfo(holiday)}
+                onClick={() => setSelectedHoliday(holiday)}
               >
                 <p className="text-sm font-medium">{holiday.localName}</p>
                 <p className="text-xs">{holiday.date}</p>
@@ -97,7 +89,9 @@ const HolidayList = () => {
       </div>
 
       {selectedHoliday && (
-        <HolidayInfo holiday={selectedHoliday} onClose={closeHolidayInfo} />
+        <Modal isOpen={!!selectedHoliday} onClose={() => setSelectedHoliday(null)}>
+          <HolidayInfo holiday={selectedHoliday} />
+        </Modal>
       )}
     </>
   );
