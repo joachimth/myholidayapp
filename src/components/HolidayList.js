@@ -4,6 +4,8 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import fetchHolidays from '../services/api';
 import holidayDetails from '../services/holidayInfo';
 import Modal from './Modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'; // Eksempel på ikon
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -96,6 +98,7 @@ const HolidayList = () => {
       {modalData && (
         <Modal isOpen={!!modalData} onRequestClose={closeModal} contentLabel="Holiday Info">
           <div className="modal-content p-4">
+            <FontAwesomeIcon icon={modalData.icon || faInfoCircle} className="text-4xl mb-4" />
             <h2 className="text-lg font-bold">{modalData.title}</h2>
             <p className="mt-2">{modalData.description}</p>
             <p className="mt-2">
