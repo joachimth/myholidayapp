@@ -1,10 +1,9 @@
-// src/components/HolidayList.js
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import Modal from './Modal';
-import holidayInfo from '../services/holidayInfo';
+import CustomModal from './Modal';
+import HolidayInfo from './HolidayInfo';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -16,7 +15,7 @@ const HolidayList = () => {
   const [holidays, setHolidays] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedHoliday, setSelectedHoliday] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     axios.get(`https://date.nager.at/api/v3/PublicHolidays/${year}/DK`)
@@ -28,12 +27,13 @@ const HolidayList = () => {
   }, [year]);
 
   const openModal = (holiday) => {
-    setSelectedHoliday(holidayInfo[holiday.date]);
-    setIsModalOpen(true);
+    setSelectedHoliday(holiday);
+    setModalIsOpen(true);
   };
 
   const closeModal = () => {
-    setIsModalOpen(false);
+    setSelectedHoliday(null);
+    setModalIsOpen(false);
   };
 
   return (
@@ -45,7 +45,7 @@ const HolidayList = () => {
       <div className="container mx-auto p-4">
         <Menu as="div" className="relative inline-block text-left w-full">
           <div className="w-full">
-            <Menu.Button className="menu-button">
+            <Menu.Button className="inline-flex w-full justify-between rounded-md shadow-sm px-4 py-2 bg-primary text-primary-content hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 focus:ring-primary">
               {year}
               <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
             </Menu.Button>
@@ -59,7 +59,7 @@ const HolidayList = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="menu-items">
+            <Menu.Items className="origin-top absolute left-0 right-0 mt-2 rounded-md shadow-lg bg-primary text-primary-content ring-1 ring-base-300 focus:outline-none z-10">
               <div className="py-1">
                 {[currentYear, currentYear + 1, currentYear + 2].map(yr => (
                   <Menu.Item key={yr}>
@@ -67,7 +67,7 @@ const HolidayList = () => {
                       <button
                         onClick={() => setYear(yr)}
                         className={classNames(
-                          active ? 'menu-item-active' : 'menu-item',
+                          active ? 'bg-secondary text-secondary-content' : 'text-primary-content',
                           'block px-4 py-2 text-sm w-full text-left'
                         )}
                       >
@@ -86,11 +86,7 @@ const HolidayList = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {holidays.map((holiday) => (
-              <div
-                key={holiday.date}
-                className="holiday-card"
-                onClick={() => openModal(holiday)}
-              >
+              <div key={holiday.date} className="bg-primary text-primary-content rounded-lg shadow-md p-4 cursor-pointer" onClick={() => openModal(holiday)}>
                 <p className="text-sm font-medium">{holiday.localName}</p>
                 <p className="text-xs">{holiday.date}</p>
               </div>
@@ -100,7 +96,9 @@ const HolidayList = () => {
         )}
       </div>
 
-      <Modal isOpen={isModalOpen} onClose={closeModal} holiday={selectedHoliday} />
+      <CustomModal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Holiday Information">
+        {selectedHoliday && <HolidayInfo holiday={selectedHoliday} closeModal={closeModal} />}
+      </CustomModal>
     </>
   );
 };
