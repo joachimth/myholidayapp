@@ -4,9 +4,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-base-100 text-center p-2 mt-8">
-      <p className="text-sm text-base-content">
-        <a href="https://github.com/joachimth/myholidayapp" className="link link-primary">myHolidayApp</a> by <a href="https://github.com/joachimth" className="link link-primary">joachimth</a> | {currentYear}
+    <footer className="bg-secondary text-secondary-content text-center p-4 mt-8">
+      <p className="text-sm">
+        <a href="https://github.com/joachimth/MyHolidayApp" className="text-primary hover:underline">myHolidayApp</a> by <a href="https://github.com/joachimth" className="text-primary hover:underline">joachimth</a> | {currentYear}
       </p>
     </footer>
   );
