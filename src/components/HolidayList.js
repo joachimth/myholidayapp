@@ -49,4 +49,63 @@ const HolidayList = () => {
           </div>
           <Transition
             as={Fragment}
-            enter="transition ease-out​⬤
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
+            <Menu.Items className="origin-top absolute left-0 right-0 mt-2 rounded-md shadow-lg bg-primary text-primary-content ring-1 ring-base-300 focus:outline-none z-10">
+              <div className="py-1">
+                {[currentYear, currentYear + 1, currentYear + 2].map(yr => (
+                  <Menu.Item key={yr}>
+                    {({ active }) => (
+                      <button
+                        onClick={() => setYear(yr)}
+                        className={classNames(
+                          active ? 'bg-secondary text-secondary-content' : 'text-primary-content',
+                          'block px-4 py-2 text-sm w-full text-left'
+                        )}
+                      >
+                        {yr}
+                      </button>
+                    )}
+                  </Menu.Item>
+                ))}
+              </div>
+            </Menu.Items>
+          </Transition>
+        </Menu>
+
+        {loading ? (
+          <p className="text-primary-content">Loading...</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {holidays.map((holiday) => (
+              <div key={holiday.date} className="bg-primary text-primary-content rounded-lg shadow-md p-4" onClick={() => openModal(holiday)}>
+                <p className="text-sm font-medium">{holiday.localName}</p>
+                <p className="text-xs">{holiday.date}</p>
+              </div>
+            ))}
+            {holidays.length === 0 && <div className="text-center col-span-full">Ingen helligdage fundet for {year}.</div>}
+          </div>
+        )}
+      </div>
+
+      {modalData && (
+        <Modal isOpen={!!modalData} onRequestClose={closeModal} contentLabel="Holiday Info">
+          <div className="p-4">
+            <h2 className="text-lg font-bold">{modalData.title}</h2>
+            <p className="mt-2">{modalData.description}</p>
+            <p className="mt-2">
+              <a href={modalData.reference} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Læs mere</a>
+            </p>
+          </div>
+        </Modal>
+      )}
+    </>
+  );
+};
+
+export default HolidayList;
