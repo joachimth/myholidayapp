@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { faChurch, faTree, faFlag, faCross, faFire, faStar, faGift, faSnowflake } from '@fortawesome/free-solid-svg-icons';
 
 const holidayDetails = {
