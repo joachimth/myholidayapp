@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 
 // Set default theme to bumblebee
-document.documentElement.setAttribute('data-theme', 'bumblebee');
+document.documentElement.setAttribute('data-theme', 'lemonade');
 
 ReactDOM.render(
   <React.StrictMode>
