@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/myholidayapp/static/css/main.1d7b8898.css",
-    "main.js": "/myholidayapp/static/js/main.213d9a02.js",
+    "main.css": "/myholidayapp/static/css/main.d58afb37.css",
+    "main.js": "/myholidayapp/static/js/main.3933c5e1.js",
     "index.html": "/myholidayapp/index.html",
-    "main.1d7b8898.css.map": "/myholidayapp/static/css/main.1d7b8898.css.map",
-    "main.213d9a02.js.map": "/myholidayapp/static/js/main.213d9a02.js.map"
+    "main.d58afb37.css.map": "/myholidayapp/static/css/main.d58afb37.css.map",
+    "main.3933c5e1.js.map": "/myholidayapp/static/js/main.3933c5e1.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d7b8898.css",
-    "static/js/main.213d9a02.js"
+    "static/css/main.d58afb37.css",
+    "static/js/main.3933c5e1.js"
   ]
 }
