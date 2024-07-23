@@ -19,7 +19,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  },
   "dependencies": {
     "axios": "^0.27.2",
     "react": "^18.1.0",
