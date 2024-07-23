@@ -1,17 +1,20 @@
+// src/App.js
 import React from 'react';
 import HolidayList from './components/HolidayList';
-import Footer from './components/Footer';
 import ThemeSelector from './components/ThemeSelector';
+import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="min-h-screen bg-base-100 text-base-content">
+const App = () => (
+  <div className="app-container">
+    <header className="navbar bg-primary text-primary-content">
+      <a className="btn btn-ghost normal-case text-xl">Danske Helligdage</a>
+    </header>
+    <main className="container mx-auto p-4">
       <ThemeSelector />
-      <div className="mb-8"> {/* Juster margin i bunden her */}
       <HolidayList />
-      <Footer />
-    </div>
-  );
-}
+    </main>
+    <Footer />
+  </div>
+);
 
 export default App;
