@@ -90,7 +90,7 @@ const HolidayList = () => {
 
       {selectedHoliday && (
         <Modal isOpen={!!selectedHoliday} onClose={() => setSelectedHoliday(null)}>
-          <holidayInfo holiday={selectedHoliday} />
+          <HolidayInfo holiday={selectedHoliday} />
         </Modal>
       )}
     </>
