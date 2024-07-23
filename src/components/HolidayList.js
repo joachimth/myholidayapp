@@ -2,7 +2,6 @@ import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import CustomModal from './Modal';
 import HolidayInfo from './HolidayInfo';
 
 function classNames(...classes) {
@@ -15,7 +14,6 @@ const HolidayList = () => {
   const [holidays, setHolidays] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedHoliday, setSelectedHoliday] = useState(null);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     axios.get(`https://date.nager.at/api/v3/PublicHolidays/${year}/DK`)
@@ -26,20 +24,18 @@ const HolidayList = () => {
       .catch(error => console.error('Error:', error));
   }, [year]);
 
-  const openModal = (holiday) => {
+  const openHolidayInfo = (holiday) => {
     setSelectedHoliday(holiday);
-    setModalIsOpen(true);
   };
 
-  const closeModal = () => {
+  const closeHolidayInfo = () => {
     setSelectedHoliday(null);
-    setModalIsOpen(false);
   };
 
   return (
     <>
       <div className="navbar bg-primary text-primary-content">
-        <span className="btn btn-ghost normal-case text-xl">Danske Helligdage i {year}</span>
+        <a className="btn btn-ghost normal-case text-xl">Danske Helligdage i {year}</a>
       </div>
 
       <div className="container mx-auto p-4">
@@ -86,7 +82,11 @@ const HolidayList = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {holidays.map((holiday) => (
-              <div key={holiday.date} className="bg-primary text-primary-content rounded-lg shadow-md p-4 cursor-pointer" onClick={() => openModal(holiday)}>
+              <div
+                key={holiday.date}
+                className="bg-primary text-primary-content rounded-lg shadow-md p-4 cursor-pointer"
+                onClick={() => openHolidayInfo(holiday)}
+              >
                 <p className="text-sm font-medium">{holiday.localName}</p>
                 <p className="text-xs">{holiday.date}</p>
               </div>
@@ -96,9 +96,9 @@ const HolidayList = () => {
         )}
       </div>
 
-      <CustomModal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Holiday Information">
-        {selectedHoliday && <HolidayInfo holiday={selectedHoliday} closeModal={closeModal} />}
-      </CustomModal>
+      {selectedHoliday && (
+        <HolidayInfo holiday={selectedHoliday} onClose={closeHolidayInfo} />
+      )}
     </>
   );
 };
