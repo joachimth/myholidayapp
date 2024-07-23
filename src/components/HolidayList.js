@@ -36,7 +36,7 @@ const HolidayList = () => {
   return (
     <>
       <div className="navbar bg-primary text-primary-content mb-4">
-        <a className="btn btn-ghost normal-case text-xl">Danske Helligdage i {year}</a>
+        <span className="btn btn-ghost normal-case text-xl">Danske Helligdage i {year}</span>
       </div>
 
       <div className="container mx-auto p-4">
