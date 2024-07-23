@@ -5,7 +5,7 @@ import fetchHolidays from '../services/api';
 import holidayDetails from '../services/holidayInfo';
 import Modal from './Modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'; // Eksempel på ikon
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
