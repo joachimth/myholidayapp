@@ -16,7 +16,7 @@ const holidayDetails = {
   "Langfredag": {
     title: "Langfredag",
     description: "Langfredag markerer dagen for Jesu korsfæstelse.",
-    icon: faCross,
+    icon: faChurch,
     reference: "https://da.wikipedia.org/wiki/Langfredag"
   },
   "Påskedag": {
