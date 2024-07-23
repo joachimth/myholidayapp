@@ -1,73 +1,79 @@
 /* eslint-disable no-unused-vars */
-import { faChurch, faTree, faFlag, faCross, faFire, faStar, faGift, faSnowflake } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFlag,
+  faCross,
+  faFireworks,
+  faGift,
+  faSnowflake,
+} from '@fortawesome/free-solid-svg-icons';
 
 const holidayDetails = {
   'Nytårsdag': {
     title: 'Nytårsdag',
-    description: 'Nytårsdag markerer begyndelsen af det nye år. Det fejres over hele verden den 1. januar.',
-    reference: 'https://da.wikipedia.org/wiki/Nyt%C3%A5rsdag',
-    icon: faFire
+    description: 'Første dag i det nye år.',
+    reference: 'https://da.wikipedia.org/wiki/Nytårsdag',
+    icon: faFireworks,
   },
   'Skærtorsdag': {
     title: 'Skærtorsdag',
-    description: 'Skærtorsdag er dagen før Langfredag og markerer begyndelsen på Påsken. Det er en dag til minde om den sidste nadver.',
-    reference: 'https://da.wikipedia.org/wiki/Sk%C3%A6rtorsdag',
-    icon: faChurch
+    description: 'Kristen helligdag til minde om Jesu sidste nadver.',
+    reference: 'https://da.wikipedia.org/wiki/Skærtorsdag',
+    icon: faCross,
   },
   'Langfredag': {
     title: 'Langfredag',
-    description: 'Langfredag er dagen, hvor Jesus blev korsfæstet. Det er en sørgedag i den kristne kalender.',
+    description: 'Kristen helligdag til minde om Jesu korsfæstelse og død.',
     reference: 'https://da.wikipedia.org/wiki/Langfredag',
-    icon: faCross
+    icon: faCross,
   },
   'Påskedag': {
     title: 'Påskedag',
-    description: 'Påskedag fejres Jesu opstandelse fra de døde. Det er den vigtigste højtid i kristendommen.',
-    reference: 'https://da.wikipedia.org/wiki/P%C3%A5skedag',
-    icon: faStar
+    description: 'Kristen helligdag til fejring af Jesu opstandelse.',
+    reference: 'https://da.wikipedia.org/wiki/Påskedag',
+    icon: faCross,
   },
-  '2. Påskedag': {
-    title: '2. Påskedag',
-    description: '2. Påskedag er dagen efter Påskedag og fejres også til minde om Jesu opstandelse.',
-    reference: 'https://da.wikipedia.org/wiki/2._P%C3%A5skedag',
-    icon: faStar
+  '2. påskedag': {
+    title: '2. påskedag',
+    description: 'Kristen helligdag, dagen efter påskedag.',
+    reference: 'https://da.wikipedia.org/wiki/2._påskedag',
+    icon: faCross,
   },
-  'Store Bededag': {
-    title: 'Store Bededag',
-    description: 'Store Bededag er en dansk helligdag, hvor alle landets indbyggere beder for et godt og fredfyldt liv.',
-    reference: 'https://da.wikipedia.org/wiki/Store_Bededag',
-    icon: faChurch
+  'Store bededag': {
+    title: 'Store bededag',
+    description: 'Dansk helligdag indført i 1686.',
+    reference: 'https://da.wikipedia.org/wiki/Store_bededag',
+    icon: faCross,
   },
-  'Kristi Himmelfartsdag': {
-    title: 'Kristi Himmelfartsdag',
-    description: 'Kristi Himmelfartsdag markerer Jesu himmelfart til himlen, 40 dage efter hans opstandelse.',
+  'Kristi himmelfartsdag': {
+    title: 'Kristi himmelfartsdag',
+    description: 'Kristen helligdag til fejring af Jesu himmelfart.',
     reference: 'https://da.wikipedia.org/wiki/Kristi_himmelfartsdag',
-    icon: faStar
+    icon: faCross,
   },
   'Pinsedag': {
     title: 'Pinsedag',
-    description: 'Pinsedag fejrer Helligåndens komme til Jesu disciple. Det markerer afslutningen på påsken.',
+    description: 'Kristen helligdag til fejring af Helligåndens komme.',
     reference: 'https://da.wikipedia.org/wiki/Pinsedag',
-    icon: faChurch
+    icon: faCross,
   },
-  '2. Pinsedag': {
-    title: '2. Pinsedag',
-    description: '2. Pinsedag er dagen efter Pinsedag og fejres også som en helligdag i Danmark.',
-    reference: 'https://da.wikipedia.org/wiki/2._Pinsedag',
-    icon: faChurch
+  '2. pinsedag': {
+    title: '2. pinsedag',
+    description: 'Kristen helligdag, dagen efter pinsedag.',
+    reference: 'https://da.wikipedia.org/wiki/2._pinsedag',
+    icon: faCross,
   },
   'Juledag': {
     title: 'Juledag',
-    description: 'Juledag fejrer Jesu fødsel og er en vigtig helligdag i kristendommen. Det fejres den 25. december.',
+    description: 'Kristen helligdag til fejring af Jesu fødsel.',
     reference: 'https://da.wikipedia.org/wiki/Juledag',
-    icon: faTree
+    icon: faGift,
   },
-  '2. Juledag': {
-    title: '2. Juledag',
-    description: '2. Juledag fejres dagen efter Juledag og markerer afslutningen på juledagene.',
-    reference: 'https://da.wikipedia.org/wiki/2._Juledag',
-    icon: faTree
-  }
+  '2. juledag': {
+    title: '2. juledag',
+    description: 'Kristen helligdag, dagen efter juledag.',
+    reference: 'https://da.wikipedia.org/wiki/2._juledag',
+    icon: faGift,
+  },
 };
 
 export default holidayDetails;
