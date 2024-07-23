@@ -24,7 +24,7 @@ const HolidayList = () => {
 
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-primary">
         <button className="btn btn-ghost text-xl">Danske Helligdage i {year}</button>
       </div>
       
@@ -68,7 +68,6 @@ const HolidayList = () => {
           </Transition>
         </Menu>
 
-        <h1 className="text-2xl font-bold text-center text-base-content mt-6 mb-4">Danske Helligdage i {year}</h1>
         {loading ? (
           <p>Loading...</p>
         ) : (
