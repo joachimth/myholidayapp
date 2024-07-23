@@ -3,12 +3,14 @@ import HolidayList from './components/HolidayList';
 import Footer from './components/Footer';
 import ThemeSelector from './components/ThemeSelector';
 
-const App = () => (
-  <div>
-    <ThemeSelector />
-    <HolidayList />
-    <Footer />
-  </div>
-);
+function App() {
+  return (
+    <div className="min-h-screen bg-base-100 text-base-content">
+      <HolidayList />
+      <Footer />
+      <ThemeSelector />
+    </div>
+  );
+}
 
 export default App;
