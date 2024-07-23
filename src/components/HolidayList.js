@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import HolidayInfo from '../services/HolidayInfo'; // Korrekt sti til import
+import HolidayInfo from '../services/holidayInfo'; // Korrekt sti til import
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -90,7 +90,7 @@ const HolidayList = () => {
 
       {selectedHoliday && (
         <Modal isOpen={!!selectedHoliday} onClose={() => setSelectedHoliday(null)}>
-          <HolidayInfo holiday={selectedHoliday} />
+          <holidayInfo holiday={selectedHoliday} />
         </Modal>
       )}
     </>
