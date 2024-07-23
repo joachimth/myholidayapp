@@ -1,8 +1,11 @@
+// src/components/HolidayList.js
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { fetchHolidays } from '../services/api';
+import Modal from './Modal';
+import holidayInfo from '../services/holidayInfo';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -13,6 +16,7 @@ const HolidayList = () => {
   const [year, setYear] = useState(currentYear);
   const [holidays, setHolidays] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedHoliday, setSelectedHoliday] = useState(null);
 
   useEffect(() => {
     const getHolidays = async () => {
@@ -26,8 +30,8 @@ const HolidayList = () => {
 
   return (
     <>
-      <div className="navbar navbar-primary mb-4">
-        <div className="btn btn-ghost normal-case text-xl">Danske Helligdage i {year}</div>
+      <div className="navbar bg-primary text-primary-content">
+        <a className="btn btn-ghost normal-case text-xl">Danske Helligdage i {year}</a>
       </div>
 
       <div className="container mx-auto p-4">
@@ -74,7 +78,11 @@ const HolidayList = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {holidays.map((holiday) => (
-              <div key={holiday.date} className="card-primary">
+              <div 
+                key={holiday.date} 
+                className="card-primary cursor-pointer"
+                onClick={() => setSelectedHoliday(holidayInfo[holiday.localName] || {})}
+              >
                 <p className="text-sm font-medium">{holiday.localName}</p>
                 <p className="text-xs">{holiday.date}</p>
               </div>
@@ -83,6 +91,12 @@ const HolidayList = () => {
           </div>
         )}
       </div>
+
+      <Modal 
+        isOpen={!!selectedHoliday} 
+        onClose={() => setSelectedHoliday(null)} 
+        holiday={selectedHoliday} 
+      />
     </>
   );
 };
