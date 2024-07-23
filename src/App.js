@@ -1,20 +1,18 @@
-// src/App.js
 import React from 'react';
 import HolidayList from './components/HolidayList';
 import ThemeSelector from './components/ThemeSelector';
 import Footer from './components/Footer';
 
-const App = () => (
-  <div className="app-container">
-    <header className="navbar bg-primary text-primary-content">
-      <a className="btn btn-ghost normal-case text-xl">Danske Helligdage</a>
-    </header>
-    <main className="container mx-auto p-4">
+const App = () => {
+  return (
+    <div className="min-h-screen flex flex-col">
       <ThemeSelector />
-      <HolidayList />
-    </main>
-    <Footer />
-  </div>
-);
+      <div className="flex-grow">
+        <HolidayList />
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
 export default App;
