@@ -1,13 +1,11 @@
 import axios from 'axios';
 
-const fetchHolidays = async (year) => {
+export const fetchHolidays = async (year) => {
   try {
     const response = await axios.get(`https://date.nager.at/api/v3/PublicHolidays/${year}/DK`);
     return response.data;
   } catch (error) {
-    console.error('Error:', error);
-    return [];
+    console.error('Error fetching holidays:', error);
+    throw error;
   }
 };
-
-export { fetchHolidays };
