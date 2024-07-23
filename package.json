@@ -8,41 +8,31 @@
     "type": "git",
     "url": "git+https://github.com/joachimth/myholidayapp.git"
   },
-  "homepage": "https://joachimth.github.io/myholidayapp",
   "private": false,
+  "homepage": "https://joachimth.github.io/myholidayapp",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
-    "serve": "serve -s build",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "axios": "^0.27.2",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "web-vitals": "^3.0.2",
+    "axios": "^1.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
     "daisyui": "^2.52.0",
-    "react-modal": "^3.14.3",
-    "@fortawesome/react-fontawesome": "^0.1.15",
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3"
+    "tailwindcss": "^3.4.6",
+    "@headlessui/react": "^1.7.0",
+    "@heroicons/react": "^1.0.6",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.x.x",
-    "@babel/plugin-transform-class-properties": "^7.18.6",
-    "@babel/plugin-transform-nullish-coalescing-operator": "^7.18.6",
-    "@babel/plugin-transform-optional-chaining": "^7.18.6",
-    "@babel/plugin-transform-private-methods": "^7.18.6",
-    "@babel/plugin-transform-numeric-separator": "^7.18.6",
-    "gh-pages": "^4.0.0",
-    "react-scripts": "5.0.1",
-    "@rollup/plugin-terser": "^8.0.0",
-    "@jridgewell/sourcemap-codec": "^1.4.8",
-    "svgo": "^2.8.0",
-    "tailwindcss": "^3.4.6"
+    "postcss": "^8.4.16",
+    "autoprefixer": "^10.4.8"
   },
   "eslintConfig": {
     "extends": "react-app"
