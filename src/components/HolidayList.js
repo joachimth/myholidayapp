@@ -24,14 +24,14 @@ const HolidayList = () => {
 
   return (
     <>
-      <div className="navbar bg-primary text-primary-content">
+      <div className="navbar bg-primary text-primary-content mb-4">
         <div className="btn btn-ghost normal-case text-xl">Danske Helligdage i {year}</div>
       </div>
 
       <div className="container mx-auto p-4">
-        <Menu as="div" className="relative inline-block text-left w-full">
+        <Menu as="div" className="relative inline-block text-left w-full mb-4">
           <div className="w-full">
-            <Menu.Button className="inline-flex w-full justify-between rounded-md shadow-sm px-4 py-2 bg-primary text-primary-content hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 focus:ring-primary">
+            <Menu.Button className="inline-flex w-full justify-between rounded-md shadow-sm px-4 py-2 bg-secondary text-secondary-content hover:bg-secondary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 focus:ring-secondary">
               {year}
               <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
             </Menu.Button>
@@ -45,7 +45,7 @@ const HolidayList = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="origin-top absolute left-0 right-0 mt-2 rounded-md shadow-lg bg-primary text-primary-content ring-1 ring-base-300 focus:outline-none z-10">
+            <Menu.Items className="origin-top absolute left-0 right-0 mt-2 rounded-md shadow-lg bg-base-200 text-base-content ring-1 ring-base-300 focus:outline-none z-10">
               <div className="py-1">
                 {[currentYear, currentYear + 1, currentYear + 2].map(yr => (
                   <Menu.Item key={yr}>
@@ -72,9 +72,9 @@ const HolidayList = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {holidays.map((holiday) => (
-              <div key={holiday.date} className="bg-primary text-primary-content rounded-lg shadow-md p-4">
-                <p className="text-sm font-medium">{holiday.localName}</p>
-                <p className="text-xs">{holiday.date}</p>
+              <div key={holiday.date} className="bg-base-200 text-base-content rounded-lg shadow-md p-4">
+                <p className="text-lg font-semibold">{holiday.localName}</p>
+                <p className="text-md">{holiday.date}</p>
               </div>
             ))}
             {holidays.length === 0 && <div className="text-center col-span-full">Ingen helligdage fundet for {year}.</div>}
