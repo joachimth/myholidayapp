@@ -16,7 +16,7 @@
 }
 
 .card-primary {
-  @apply bg-base-200 text-base-content rounded-lg shadow-md p-4;
+  @apply bg-base-200 text-base-content rounded-lg shadow-md p-4 cursor-pointer;
 }
 
 .loading-text {
