@@ -1,7 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* index.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-body {
-  @apply bg-base-200;
+.navbar-primary {
+  @apply bg-primary text-primary-content;
+}
+
+.dropdown-button {
+  @apply inline-flex w-full justify-between rounded-md shadow-sm px-4 py-2 bg-primary text-primary-content hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 focus:ring-primary;
+}
+
+.dropdown-menu {
+  @apply origin-top absolute left-0 right-0 mt-2 rounded-md shadow-lg bg-primary text-primary-content ring-1 ring-base-300 focus:outline-none z-10;
+}
+
+.card-primary {
+  @apply bg-base-200 text-base-content rounded-lg shadow-md p-4;
+}
+
+.loading-text {
+  @apply text-primary-content;
 }
