@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* Add this to ensure the modal content is styled correctly */
-.modal-content {
-  @apply bg-base-100 text-base-content p-6 rounded-lg shadow-lg;
-}
-
 .navbar {
   @apply bg-primary text-primary-content;
 }
@@ -48,24 +42,20 @@
   @apply text-primary-content;
 }
 
-.modal-overlay {
-  @apply fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center;
-}
-
 .modal-content {
-  @apply bg-base-100 rounded-lg shadow-lg p-6 relative z-50 w-11/12 md:w-3/4 lg:w-1/2;
+  background-color: var(--tw-bg-opacity) var(--tw-bg-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--tw-shadow);
 }
 
-.modal-header {
-  @apply flex justify-between items-center border-b border-base-300 pb-3;
+.modal-content h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
-.modal-body {
-  @apply my-4;
-}
-
-.modal-footer {
-  @apply flex justify-end;
+.modal-content p {
+  margin-top: 0.5rem;
 }
 
 .close-button {
