@@ -15,7 +15,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "web-vitals": "^3.0.2",
-    "@heroicons/react": "^2.0.13"  // Tilføj denne linje
+    "@heroicons/react": "^2.0.13"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.x.x",
@@ -33,7 +33,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests",  // Tilføjet denne del
+    "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
