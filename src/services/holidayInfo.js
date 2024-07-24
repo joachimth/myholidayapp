@@ -2,9 +2,10 @@
 import {
   faFlag,
   faCross,
-  faFireworks,
   faGift,
   faSnowflake,
+  faBell,
+  faStar,
 } from '@fortawesome/free-solid-svg-icons';
 
 const holidayDetails = {
@@ -12,7 +13,7 @@ const holidayDetails = {
     title: 'Nytårsdag',
     description: 'Første dag i det nye år.',
     reference: 'https://da.wikipedia.org/wiki/Nytårsdag',
-    icon: faFireworks,
+    icon: faStar,
   },
   'Skærtorsdag': {
     title: 'Skærtorsdag',
