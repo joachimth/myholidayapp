@@ -1,11 +1,10 @@
 import React, { useState, useEffect, Fragment } from 'react';
+import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import fetchHolidays from '../services/api';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import holidayDetails from '../services/holidayInfo';
 import Modal from './Modal';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -16,33 +15,33 @@ const HolidayList = () => {
   const [year, setYear] = useState(currentYear);
   const [holidays, setHolidays] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [modalData, setModalData] = useState(null);
+  const [selectedHoliday, setSelectedHoliday] = useState(null);
 
   useEffect(() => {
-    const getHolidays = async () => {
-      const data = await fetchHolidays(year);
-      setHolidays(data);
-      setLoading(false);
-    };
-    getHolidays();
+    axios.get(`https://date.nager.at/api/v3/PublicHolidays/${year}/DK`)
+      .then(response => {
+        setHolidays(response.data);
+        setLoading(false);
+      })
+      .catch(error => console.error('Error:', error));
   }, [year]);
 
-  const openModal = (holiday) => {
-    setModalData(holidayDetails[holiday.localName] || null);
+  const handleHolidayClick = (holiday) => {
+    setSelectedHoliday(holidayDetails[holiday.localName] || null);
   };
 
   const closeModal = () => {
-    setModalData(null);
+    setSelectedHoliday(null);
   };
 
   return (
     <>
-      <div className="navbar bg-primary text-primary-content mb-4">
-        <button className="btn btn-ghost normal-case text-xl">Danske Helligdage i {year}</button>
+      <div className="navbar bg-primary text-primary-content">
+        <span className="btn btn-ghost normal-case text-xl">Danske Helligdage i {year}</span>
       </div>
 
       <div className="container mx-auto p-4">
-        <Menu as="div" className="relative inline-block text-left w-full mb-4">
+        <Menu as="div" className="relative inline-block text-left w-full">
           <div className="w-full">
             <Menu.Button className="inline-flex w-full justify-between rounded-md shadow-sm px-4 py-2 bg-primary text-primary-content hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 focus:ring-primary">
               {year}
@@ -85,28 +84,32 @@ const HolidayList = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {holidays.map((holiday) => (
-              <div key={holiday.date} className="bg-primary text-primary-content rounded-lg shadow-md p-4" onClick={() => openModal(holiday)}>
-                <p className="text-sm font-medium">{holiday.localName}</p>
+              <div key={holiday.date} className="bg-primary text-primary-content rounded-lg shadow-md p-4 cursor-pointer" onClick={() => handleHolidayClick(holiday)}>
+                <p className="text-sm font-medium">
+                  {holiday.localName}
+                  {holidayDetails[holiday.localName]?.noWork && (
+                    <FontAwesomeIcon icon={faBriefcase} className="ml-2" />
+                  )}
+                </p>
                 <p className="text-xs">{holiday.date}</p>
               </div>
             ))}
             {holidays.length === 0 && <div className="text-center col-span-full">Ingen helligdage fundet for {year}.</div>}
           </div>
         )}
-      </div>
 
-      {modalData && (
-        <Modal isOpen={!!modalData} onRequestClose={closeModal} contentLabel="Holiday Info">
-          <div className="modal-content p-4">
-            <FontAwesomeIcon icon={modalData.icon || faInfoCircle} className="text-4xl mb-4" />
-            <h2 className="text-lg font-bold">{modalData.title}</h2>
-            <p className="mt-2">{modalData.description}</p>
-            <p className="mt-2">
-              <a href={modalData.reference} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Læs mere</a>
-            </p>
-          </div>
-        </Modal>
-      )}
+        {selectedHoliday && (
+          <Modal isOpen={!!selectedHoliday} onRequestClose={closeModal}>
+            <div className="p-4">
+              <h2 className="text-xl font-bold">{selectedHoliday.title}</h2>
+              <p>{selectedHoliday.description}</p>
+              <p>
+                <a href={selectedHoliday.reference} target="_blank" rel="noopener noreferrer" className="text-secondary">Læs mere</a>
+              </p>
+            </div>
+          </Modal>
+        )}
+      </div>
     </>
   );
 };
