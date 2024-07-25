@@ -1,8 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import axios from 'axios';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { fetchHolidays } from '../services/api';
 import holidayDetails from '../services/holidayInfo';
 import Modal from './Modal';
 
@@ -18,9 +19,9 @@ const HolidayList = () => {
   const [selectedHoliday, setSelectedHoliday] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://date.nager.at/api/v3/PublicHolidays/${year}/DK`)
+    fetchHolidays(year)
       .then(response => {
-        setHolidays(response.data);
+        setHolidays(response);
         setLoading(false);
       })
       .catch(error => console.error('Error:', error));
