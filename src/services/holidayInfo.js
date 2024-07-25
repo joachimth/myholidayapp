@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { faBriefcase, faChurch, faFire, faGift, faSnowflake, faFlag, faTree } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faChurch, faFire, faGift, faSnowflake, faFlag, faTree, faCross } from '@fortawesome/free-solid-svg-icons';
 
 const holidayDetails = {
   "Nytårsdag": {
