@@ -98,19 +98,22 @@ const HolidayList = () => {
             {holidays.length === 0 && <div className="text-center col-span-full">Ingen helligdage fundet for {year}.</div>}
           </div>
         )}
-
-        {selectedHoliday && (
-          <Modal isOpen={!!selectedHoliday} onRequestClose={closeModal}>
-            <div className="p-4">
-              <h2 className="text-xl font-bold">{selectedHoliday.title}</h2>
-              <p>{selectedHoliday.description}</p>
-              <p>
-                <a href={selectedHoliday.reference} target="_blank" rel="noopener noreferrer" className="text-secondary">Læs mere</a>
-              </p>
-            </div>
-          </Modal>
-        )}
       </div>
+
+      {selectedHoliday && (
+        <Modal isOpen={!!selectedHoliday} onClose={closeModal}>
+          <div className="modal-header">
+            <h2>{selectedHoliday.name}</h2>
+          </div>
+          <div className="modal-body">
+            <p>{selectedHoliday.description}</p>
+            <a href={selectedHoliday.link} target="_blank" rel="noopener noreferrer">Læs mere</a>
+          </div>
+          <div className="modal-footer">
+            <button className="btn btn-primary" onClick={closeModal}>Luk</button>
+          </div>
+        </Modal>
+      )}
     </>
   );
 };
