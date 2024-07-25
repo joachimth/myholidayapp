@@ -6,6 +6,10 @@ import {
   faSnowflake,
   faBell,
   faStar,
+  faChurch,
+  faLeaf,
+  faCalendarAlt,
+  faFire,
 } from '@fortawesome/free-solid-svg-icons';
 
 const holidayDetails = {
@@ -14,6 +18,12 @@ const holidayDetails = {
     description: 'Første dag i det nye år.',
     reference: 'https://da.wikipedia.org/wiki/Nytårsdag',
     icon: faStar,
+  },
+  'Fastelavn': {
+    title: 'Fastelavn',
+    description: 'En dansk tradition der involverer børn der klæder sig ud og slår katten af tønden.',
+    reference: 'https://da.wikipedia.org/wiki/Fastelavn',
+    icon: faLeaf,
   },
   'Skærtorsdag': {
     title: 'Skærtorsdag',
@@ -43,7 +53,7 @@ const holidayDetails = {
     title: 'Store bededag',
     description: 'Dansk helligdag indført i 1686.',
     reference: 'https://da.wikipedia.org/wiki/Store_bededag',
-    icon: faCross,
+    icon: faChurch,
   },
   'Kristi himmelfartsdag': {
     title: 'Kristi himmelfartsdag',
@@ -63,6 +73,18 @@ const holidayDetails = {
     reference: 'https://da.wikipedia.org/wiki/2._pinsedag',
     icon: faCross,
   },
+  'Grundlovsdag': {
+    title: 'Grundlovsdag',
+    description: 'Fejrer underskrivelsen af Danmarks første grundlov i 1849.',
+    reference: 'https://da.wikipedia.org/wiki/Grundlovsdag',
+    icon: faFlag,
+  },
+  'Juleaften': {
+    title: 'Juleaften',
+    description: 'Aften før juledag, fejret med gaver og julemiddag.',
+    reference: 'https://da.wikipedia.org/wiki/Juleaften',
+    icon: faGift,
+  },
   'Juledag': {
     title: 'Juledag',
     description: 'Kristen helligdag til fejring af Jesu fødsel.',
@@ -74,6 +96,12 @@ const holidayDetails = {
     description: 'Kristen helligdag, dagen efter juledag.',
     reference: 'https://da.wikipedia.org/wiki/2._juledag',
     icon: faGift,
+  },
+  'Nytårsaften': {
+    title: 'Nytårsaften',
+    description: 'Aften før nytårsdag, fejret med fest og fyrværkeri.',
+    reference: 'https://da.wikipedia.org/wiki/Nytårsaften',
+    icon: faFire,
   },
 };
 
