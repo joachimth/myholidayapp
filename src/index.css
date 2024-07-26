@@ -1,67 +1,98 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "daisyui";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Centrale styling regler for alle komponenter */
 .navbar {
-  @apply bg-primary text-primary-content;
+  margin-bottom: 20px;
 }
 
-.btn {
-  @apply bg-primary text-primary-content hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 focus:ring-primary;
+.container {
+  padding: 16px;
 }
 
-.dropdown {
-  @apply relative inline-block text-left w-full;
+.menu-button {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+  background-color: var(--tw-bg-opacity, 1) var(--tw-color-primary);
+  color: var(--tw-text-opacity, 1) var(--tw-color-primary-content);
 }
 
-.dropdown-button {
-  @apply inline-flex w-full justify-between rounded-md shadow-sm px-4 py-2 bg-primary text-primary-content hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 focus:ring-primary;
+.menu-button:hover {
+  background-color: var(--tw-bg-opacity, 1) var(--tw-color-primary-focus);
 }
 
-.dropdown-menu {
-  @apply origin-top absolute left-0 right-0 mt-2 rounded-md shadow-lg bg-primary text-primary-content ring-1 ring-base-300 focus:outline-none z-10;
+.menu-button:focus {
+  outline: none;
+  ring: 2;
+  ring-offset: 2;
+  ring-offset-base-100: var(--tw-bg-opacity, 1) var(--tw-color-primary);
 }
 
-.dropdown-item {
-  @apply block px-4 py-2 text-sm w-full text-left;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
 }
 
-.dropdown-item-active {
-  @apply bg-secondary text-secondary-content;
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.grid-container {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.card {
-  @apply bg-primary text-primary-content rounded-lg shadow-md p-4 cursor-pointer;
-}
-
-.loading-text {
-  @apply text-primary-content;
-}
-
-.modal-content {
-  background-color: var(--tw-bg-opacity) var(--tw-bg-color);
+.grid-item {
+  background-color: var(--tw-bg-opacity, 1) var (--tw-color-primary);
+  color: var(--tw-text-opacity, 1) var (--tw-color-primary-content);
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: var(--tw-shadow);
+  cursor: pointer;
 }
 
-.modal-content h2 {
-  font-size: 1.25rem;
-  font-weight: bold;
+.grid-item .text-sm {
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
-.modal-content p {
-  margin-top: 0.5rem;
+.grid-item .text-xs {
+  font-size: 0.75rem;
 }
 
-.close-button {
-  @apply absolute top-2 right-2 text-gray-500 hover:text-gray-700;
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  max-width: 500px;
+  width: 100%;
 }
 
-.close-button svg {
-  @apply h-6 w-6;
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
 }
