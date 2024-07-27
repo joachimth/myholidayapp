@@ -1,11 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import { fetchHolidays } from '../services/api';
-import holidayDetails from '../services/holidayInfo';
 import Modal from './Modal';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import HolidayInfo from '../services/holidayInfo';
+import { fetchHolidays } from '../services/api';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -20,20 +18,12 @@ const HolidayList = () => {
 
   useEffect(() => {
     fetchHolidays(year)
-      .then(response => {
-        setHolidays(response.data);
+      .then(data => {
+        setHolidays(data);
         setLoading(false);
       })
       .catch(error => console.error('Error:', error));
   }, [year]);
-
-  const openModal = (holiday) => {
-    setSelectedHoliday(holiday);
-  };
-
-  const closeModal = () => {
-    setSelectedHoliday(null);
-  };
 
   return (
     <>
@@ -42,9 +32,9 @@ const HolidayList = () => {
       </div>
 
       <div className="container mx-auto p-4">
-        <Menu as="div" className="relative inline-block text-left w-full mb-6">
+        <Menu as="div" className="relative inline-block text-left w-full mb-4">
           <div className="w-full">
-            <Menu.Button className="inline-flex w-full justify-between rounded-md shadow-sm px-4 py-2 bg-primary text-primary-content hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 focus:ring-primary">
+            <Menu.Button className="menu-button">
               {year}
               <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
             </Menu.Button>
@@ -85,31 +75,20 @@ const HolidayList = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {holidays.map((holiday) => (
-              <div 
-                key={holiday.date} 
-                className="bg-primary text-primary-content rounded-lg shadow-md p-4 cursor-pointer"
-                onClick={() => openModal(holiday)}
-              >
+              <div key={holiday.date} className="grid-item" onClick={() => setSelectedHoliday(holiday)}>
                 <p className="text-sm font-medium">{holiday.localName}</p>
                 <p className="text-xs">{holiday.date}</p>
-                {holidayDetails[holiday.localName] && holidayDetails[holiday.localName].noWork && (
-                  <p className="text-xs mt-2"><FontAwesomeIcon icon={faBriefcase} /> Arbejdsfri dag</p>
-                )}
               </div>
             ))}
             {holidays.length === 0 && <div className="text-center col-span-full">Ingen helligdage fundet for {year}.</div>}
           </div>
         )}
+        {selectedHoliday && (
+          <Modal isOpen={true} onRequestClose={() => setSelectedHoliday(null)}>
+            <HolidayInfo holiday={selectedHoliday} />
+          </Modal>
+        )}
       </div>
-
-      {selectedHoliday && (
-        <Modal isOpen={!!selectedHoliday} onRequestClose={closeModal}>
-          <h2>{selectedHoliday.localName}</h2>
-          <p>{holidayDetails[selectedHoliday.localName]?.description}</p>
-          <a href={holidayDetails[selectedHoliday.localName]?.link} target="_blank" rel="noopener noreferrer">Læs mere</a>
-          <button onClick={closeModal}>Luk</button>
-        </Modal>
-      )}
     </>
   );
 };
